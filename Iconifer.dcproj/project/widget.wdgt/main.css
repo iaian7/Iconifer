@@ -353,7 +353,7 @@ body {
     font-size: 10pt;
     text-align: left;
     left: 22px;
-    top: 176px;
+    top: 156px;
     margin-bottom: auto;
     right: 78px;
     width: auto;
@@ -520,22 +520,6 @@ body {
     text-align: center;
 }
 
-#outputText {
-    font-family: HelveticaNeue;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    color: rgb(255, 255, 255);
-    font-size: 10pt;
-    text-align: left;
-    height: 15px;
-    top: 122px;
-    margin-bottom: auto;
-    right: 22px;
-    margin-left: auto;
-    width: 122px;
-}
-
 #scale {
     position: absolute;
     font-size: 14px;
@@ -543,31 +527,13 @@ body {
     opacity: 1;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     height: 24px;
-    width: 124px;
-    top: 140px;
-    margin-right: auto;
-    margin-bottom: auto;
-    right: auto;
-    bottom: auto;
-    left: 22px;
     font-family: 'Helvetica Neue';
     text-align: left;
-}
-
-#output {
-    position: absolute;
-    font-size: 14px;
-    color: rgb(255, 255, 255);
-    opacity: 1;
-    text-shadow: rgb(0, 0, 0) 0px -1px 1px;
-    height: 24px;
-    width: 124px;
-    top: 140px;
-    left: 154px;
-    margin-right: auto;
+    top: 120px;
+    width: 150px;
     margin-bottom: auto;
-    text-align: left;
-    font-family: 'Helvetica Neue';
+    right: 22px;
+    margin-left: auto;
 }
 
 #scaleText {
@@ -578,13 +544,13 @@ body {
     color: rgb(255, 255, 255);
     font-size: 10pt;
     text-align: left;
-    right: 12px;
     height: 15px;
     left: 22px;
-    top: 122px;
-    margin-bottom: auto;
+    width: 98px;
+    line-height: 16px;
+    top: 126px;
     margin-right: auto;
-    width: 124px;
+    margin-bottom: auto;
 }
 
 #sharpThreshText {

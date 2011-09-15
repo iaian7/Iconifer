@@ -17,8 +17,6 @@ var dashcodePartSpecs = {
     "locationText": { "text": "locationText", "view": "DC.Text" },
     "new": { "text": "new", "view": "DC.Text" },
     "newVersion": { "text": "newVersion", "view": "DC.Text" },
-    "output": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "output", "onchange": "updateOutput", "options": [["automatic", "0"], ["force .png", "1"], ["force .jpg", "2"], ["force .tif", "3"]], "rightImageWidth": 16, "view": "DC.View" },
-    "outputText": { "text": "outputText", "view": "DC.Text" },
     "scale": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "scale", "onchange": "updateScale", "options": [["point", "Point"], ["box", "Box"], ["cubic", "Cubic"], ["quadratic", "Quadratic", true], ["gaussian", "Gaussian"], ["mitchell", "Mitchell"], ["catrom", "Catrom"], ["lanczos", "Lanczos"]], "rightImageWidth": 16, "view": "DC.View" },
     "scaleText": { "text": "scaleText", "view": "DC.Text" },
     "sharpAmountText": { "text": "sharpAmount", "view": "DC.Text" },
@@ -35,6 +33,7 @@ var dashcodePartSpecs = {
     "wrongButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done", "view": "DC.View" },
     "wrongText": { "text": "wrong", "view": "DC.Text" }
 };
+
 
 
 

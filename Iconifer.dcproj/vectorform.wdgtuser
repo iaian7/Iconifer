@@ -136,8 +136,8 @@
 		</array>
 		<key>Visible StackLayout Views</key>
 		<array>
-			<string>front</string>
 			<string>main</string>
+			<string>back</string>
 		</array>
 	</dict>
 </dict>
