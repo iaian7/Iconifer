@@ -12,7 +12,7 @@ var localizedStrings = {
     "drop1": "drop image files here",
     "dropDetail": "512x512 or larger",
     "fail": "file processing failed\nplease try again",
-    "feedback": "512, 114, 72, and 57 pixel files",
+    "feedback": "PNG files: 512, 114, 72, 57",
     "iaian7com": "For more information, please visit iaian7.com/dashboard/iconifer",
     "locationText": "ImageMagick install location",
     "nameFileText": "file sheet prefix",

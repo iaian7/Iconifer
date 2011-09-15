@@ -64,7 +64,7 @@ body {
     right: 0px;
     width: auto;
     background-image: url(Images/Form-Background-Large.png);
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
     height: 96px;
     background-position: 50% 50%;
     background-repeat: repeat no-repeat;
@@ -80,7 +80,7 @@ body {
     margin-right: 0px;
     margin-bottom: 0px;
     width: auto;
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
 }
 
 #stack {
@@ -394,7 +394,7 @@ body {
     font-size: 11pt;
     font-family: 'Helvetica Neue';
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
     margin-right: auto;
     margin-bottom: auto;
     top: 38px;
@@ -452,7 +452,7 @@ body {
     border-style: solid;
     font-size: 11pt;
     overflow: hidden;
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
     width: 51px;
     left: 91px;
     margin-right: auto;
@@ -477,7 +477,7 @@ body {
     border-style: solid;
     font-size: 11pt;
     overflow: hidden;
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
     width: 51px;
     left: 154px;
     margin-right: auto;
@@ -617,7 +617,7 @@ body {
     border-style: solid;
     font-size: 11pt;
     overflow: hidden;
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
     width: 51px;
     left: 223px;
     margin-right: auto;
@@ -653,13 +653,13 @@ body {
     left: 0px;
     top: 107px;
     width: 254px;
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
     border-top-left-radius: 5px 5px;
     border-top-right-radius: 5px 5px;
     border-bottom-left-radius: 5px 5px;
     border-bottom-right-radius: 5px 5px;
     height: 54px;
-    background-color: rgba(77, 77, 77, 0.292969);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #feedback {

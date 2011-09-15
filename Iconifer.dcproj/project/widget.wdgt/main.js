@@ -196,19 +196,19 @@ function updateType(event) {
 function updateFeedback(event) {
 	switch (prefType) {
 		case 0:
-			document.getElementById("feedback").innerHTML = "512, 114, 72, and 57 pixel files";
+			document.getElementById("feedback").innerHTML = "PNG files: 512, 114, 72, 57";
 			break;
 		case 1:
-			document.getElementById("feedback").innerHTML = "512, 256, 128, 32, 16, and ICNS file";
+			document.getElementById("feedback").innerHTML = "ICNS file: 512, 256, 128, 32, 16";
 			break;
 		case 2:
-			document.getElementById("feedback").innerHTML = "256, 48, 32, 24, 16, and ICO file";
+			document.getElementById("feedback").innerHTML = "ICO file: 256, 48, 32, 24, 16";
 			break;
 		case 3:
-			document.getElementById("feedback").innerHTML = "individual files, ICNS, and ICO";
+			document.getElementById("feedback").innerHTML = "ICNS, ICO";
 			break;
 		default:
-			document.getElementById("feedback").innerHTML = "widget error, please visit iaian7.com";
+			document.getElementById("feedback").innerHTML = "PNG, ICNS, ICO";
 		}
 //	iOS (app store + devices)
 //	Mac (ICNS format)
@@ -256,137 +256,203 @@ function dragOver(event) {
 	event.preventDefault();
 }
 
-function dragDrop(event) {
-	try {
-		uri = event.dataTransfer.getData("text/uri-list");
-		uri = uri.replace(/file:\/\/localhost/gi, "");
-		uri = uri.replace(/\%20/gi, "\\ ");
-		uri = uri.split("\n");
-//	alert("uri length: "+uri.length+"\nuri: "+uri.join("\n"));
-		uri = uri.sort(sortAlphaNum);
-//	alert("uri length: "+uri.length+"\nuri: "+uri.join("\n"));
-		var uriParts = [];
-		for (var i=0; i<uri.length; i++) {
-//			alert("i: "+i+"\nuriPart: "+uri[i]);
-			uriParts[i] = uri[i].match(/(.+?)(\.\w{3,4})$/);
-		}
-	alert("uriParts:\n"+uriParts.join("\n"));
-//		if (uriParts == null) uriParts = uri[0].match(/(.+?)(\.\w{3,4})$/);
-//		if (typeof(uriParts[3])=="undefined") uriParts[3] = uriParts[2];
-//		var name = uriParts[1]+prefSharpSize+uriParts[3];
-//		var nameRGB = uriParts[1]+prefSharpSize+".rgb"+uriParts[3];
-//		var nameAlpha = uriParts[1]+prefSharpSize+".a"+uriParts[3];
-		var scale = "-filter ";
 
-		switch (prefScale) {
-		case 0:
-			scale += "Point ";
-			break;
-		case 1:
-			scale += "Box ";
-			break;
-		case 2:
-			scale += "Cubic ";
-			break;
-		case 3:
-			scale += "Quadratic ";
-			break;
-		case 4:
-			scale += "Gaussian ";
-			break;
-		case 5:
-			scale += "Mitchell ";
-			break;
-		case 6:
-			scale += "Catrom ";
-			break;
-		case 7:
-			scale += "Lanczos ";
-			break;
-		default:
-			scale = "";
-		}
+
+
+
+var uri = [];
+var uriParts = [];
+
+function dragDrop(event) {
+try {
+	uri = event.dataTransfer.getData("text/uri-list");
+	uri = uri.replace(/file:\/\/localhost/gi, "");
+	uri = uri.replace(/\%20/gi, "\\ ");
+	uri = uri.split("\n");
+//	alert("uri length: "+uri.length+"\nuri: "+uri.join("\n"));
+	uri = uri.sort(sortAlphaNum);
+//	alert("uri length: "+uri.length+"\nuri: "+uri.join("\n"));
+	for (var i=0; i<uri.length; i++) {
+//		alert("i: "+i+"\nuriPart: "+uri[i]);
+		uriParts[i] = uri[i].match(/(.+?)(\.\w{3,4})$/);
+	}
+//	alert("uriParts:\n"+uriParts.join("\n"));
+//	if (uriParts == null) uriParts = uri[0].match(/(.+?)(\.\w{3,4})$/);
+//	if (typeof(uriParts[3])=="undefined") uriParts[3] = uriParts[2];
+	var scale = " -filter ";
+
+	switch (prefScale) {
+	case 0:
+		scale += "Point ";
+		break;
+	case 1:
+		scale += "Box ";
+		break;
+	case 2:
+		scale += "Cubic ";
+		break;
+	case 3:
+		scale += "Quadratic ";
+		break;
+	case 4:
+		scale += "Gaussian ";
+		break;
+	case 5:
+		scale += "Mitchell ";
+		break;
+	case 6:
+		scale += "Catrom ";
+		break;
+	case 7:
+		scale += "Lanczos ";
+		break;
+	default:
+		scale = "";
+	}
 
 //alert("scale: "+scale);
-//alert("prefOutput: "+prefOutput);
 
 var command = "";
 
 for (var i=0; i<uri.length; i++) {
 	switch (prefType) {
 		case 0:
-//			alert("512, 114, 72, and 57 pixel files");
-			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+" -resize x512";
+//			alert("PNG files: 512, 114, 72, 57");
+			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x512";
 			command += " \\( +clone -write "+uriParts[i][1]+"-512"+uriParts[i][2]+" +delete \\)";
-			command += " -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+" -resize x256";
-			command += " \\( +clone -resize x114 -write "+uriParts[i][1]+"-114"+uriParts[i][2]+" +delete \\)";
-			command += " \\( +clone -resize x72 -write "+uriParts[i][1]+"-72"+uriParts[i][2]+" +delete \\)";
-			command += " -resize x57 "+uriParts[i][1]+"-57"+uriParts[i][2];
+			command += " -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x256";
+			command += " \\( +clone "+scale+" -resize x114 -write "+uriParts[i][1]+"-114"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone "+scale+" -resize x72 -write "+uriParts[i][1]+"-72"+uriParts[i][2]+" +delete \\)";
+			command += scale+" -resize x57 "+uriParts[i][1]+"-57"+uriParts[i][2];
 			widget.system(command, endHandler).outputString;
-//		alert("command: "+command);
 			break;
 		case 1:
-//			alert("512, 256, 128, 32, 16, and ICNS file");
-			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+" -resize x512";
+//			alert("ICNS file: 512, 256, 128, 32, 16");
+			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x512";
 			command += " \\( +clone -write "+uriParts[i][1]+"-512.png +delete \\)";
-			command += " \\( +clone -resize x256 -write "+uriParts[i][1]+"-256.png +delete \\)";
-			command += " \\( +clone -resize x128 -write "+uriParts[i][1]+"-128.png +delete \\)";
-			command += " \\( +clone -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
-			command += " \\( +clone -resize x16 -write "+uriParts[i][1]+"-16.png +delete \\)";
-			command += " -resize x57 "+uriParts[i][1]+"-57.png";
-			widget.system(command, endHandler).outputString;
-//		alert("command: "+command);
-			command = prefLocation+"png2icns "+uriParts[i][1]+".icns ";
-			command += uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-16.png";
-			widget.system(command, endHandler).outputString;
-//		alert("ICNS command: "+command);
+			command += " \\( +clone "+scale+" -resize x256 -write "+uriParts[i][1]+"-256.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x128 -write "+uriParts[i][1]+"-128.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
+			command += scale+" -resize x16 "+uriParts[i][1]+"-16.png";
+			widget.system(command, endICNS).outputString;
 			break;
 		case 2:
-//			alert("256, 48, 32, 24, 16, and ICO file");
-			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+" -resize x256";
+//			alert("ICO file: 256, 48, 32, 24, 16");
+			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x256";
 			command += " \\( +clone -write "+uriParts[i][1]+"-256.png +delete \\)";
-			command += " \\( +clone -resize x48 -write "+uriParts[i][1]+"-48.png +delete \\)";
-			command += " \\( +clone -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
-			command += " \\( +clone -resize x24 -write "+uriParts[i][1]+"-24.png +delete \\)";
-			command += " -resize x16 "+uriParts[i][1]+"-16.png";
-			widget.system(command, endHandler).outputString;
-//		alert("command: "+command);
-			command = prefLocation+"convert "+uriParts[i][1]+"-16.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+".ico ";
-			widget.system(command, endHandler).outputString;
-//		alert("ICNS command: "+command);
+			command += " \\( +clone "+scale+" -resize x48 -write "+uriParts[i][1]+"-48.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x24 -write "+uriParts[i][1]+"-24.png +delete \\)";
+			command += scale+" -resize x16 "+uriParts[i][1]+"-16.png";
+			widget.system(command, endICO).outputString;
 			break;
 		case 3:
-//			alert("individual files, ICNS, and ICO");
+//			alert("ICNS, ICO");
+			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x512";
+			command += " \\( +clone -write "+uriParts[i][1]+"-512.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x256 -write "+uriParts[i][1]+"-256.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x128 -write "+uriParts[i][1]+"-128.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x48 -write "+uriParts[i][1]+"-48.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x24 -write "+uriParts[i][1]+"-24.png +delete \\)";
+			command += scale+" -resize x16 "+uriParts[i][1]+"-16.png";
+			widget.system(command, endICO).outputString;
 			break;
 		default:
-//			alert("widget error, please visit iaian7.com");
+//			alert("PNG files, ICNS, ICO");
+			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x512";
+			command += " \\( +clone -write "+uriParts[i][1]+"-512.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x256 -write "+uriParts[i][1]+"-256.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x128 -write "+uriParts[i][1]+"-128.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x114 -write "+uriParts[i][1]+"-114.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x72 -write "+uriParts[i][1]+"-72.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x57 -write "+uriParts[i][1]+"-57.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x48 -write "+uriParts[i][1]+"-48.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x24 -write "+uriParts[i][1]+"-24.png +delete \\)";
+			command += scale+" -resize x16 "+uriParts[i][1]+"-16.png";
+			widget.system(command, endICO).outputString;
+		}
 	}
-}
-
-//		if (uri.length == 1) {
-//			if (prefOutput == 0 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha set "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+name, endHandler).outputString;
-//			if (prefOutput == 1 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha off "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameRGB, endHandler).outputString;
-//			if (prefOutput == 2 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uriParts[1]+"*"+uriParts[3]+" "+nameAlpha, endHandler).outputString;
-//			showSuccess(event);
-//		} else {
-//			if (prefOutput == 0 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha set "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+name, endHandler).outputString;
-//			if (prefOutput == 1 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha off "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameRGB, endHandler).outputString;
-//			if (prefOutput == 2 || prefOutput == 3) widget.system(prefLocation+"montage -background none -alpha extract "+scale+tile+" -geometry "+geometry+mode+uri.join(" ")+" "+nameAlpha, endHandler).outputString;
-//			showSuccess(event);
-//		}
-	} catch (ex) {
-		alert("Problem fetching URI: " + ex);
-		showFail(event);
+	showSuccess(event);
+} catch (ex) {
+	alert("Problem fetching URI: " + ex);
+	showFail(event);
 	}
-
 	event.stopPropagation();
 	event.preventDefault();
 }
 
-function endHandler (output) {
+function endICNS(event) {
+try {
+	for (i = 0; i < uri.length; i++){
+		widget.system(prefLocation+"png2icns "+uriParts[i][1]+".icns "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-16.png", endCleaner).outputString;
+	}
+	alert("endICNS")
+	showSuccess(event);
+} catch (ex) {
+	alert("Problem creating ICNS: " + ex);
+	showFail(event);
+	}
+}
+
+function endICO(event) {
+try {
+	if (prefType >= 3) {
+		for (i = 0; i < uri.length; i++){
+			widget.system(prefLocation+"convert "+uriParts[i][1]+"-16.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+".ico", endICNS).outputString;
+		}
+		alert("endICO...")
+	} else {
+		for (i = 0; i < uri.length; i++){
+			widget.system(prefLocation+"convert "+uriParts[i][1]+"-16.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+".ico", endCleaner).outputString;
+		}
+		alert("endICO")
+	}
+	showSuccess(event);
+} catch (ex) {
+	alert("Problem creating ICO: " + ex);
+	showFail(event);
+	}
+}
+
+function endCleaner(event) {
+try {
+	if (prefType == 1) {			// delete 512, 256, 128, 32, 16
+		for (i = 0; i < uri.length; i++){
+			widget.system("mv "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-16.png ~/.Trash/", endHandler).outputString;
+		}
+		alert("endCleaner 1")
+	} else if (prefType == 2) {		// delete 256, 48, 32, 24, 16
+		for (i = 0; i < uri.length; i++){
+			widget.system("mv "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", endHandler).outputString;
+		}
+		alert("endCleaner 2")
+	} else if (prefType == 3) {		// delete 512, 256, 128, 48, 32, 24, 16
+		for (i = 0; i < uri.length; i++){
+			widget.system("mv "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", endHandler).outputString;
+		}
+		alert("endCleaner 3")
+	} else if (prefType >= 4) {		// delete 256, 128, 48, 32, 24, 16
+		for (i = 0; i < uri.length; i++){
+			widget.system("mv "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", endHandler).outputString;
+		}
+		alert("endCleaner 3")
+	}
+	showSuccess(event);
+} catch (ex) {
+	alert("Problem cleaning up files: " + ex);
+	showFail(event);
+	}
+}
+
+function endHandler(output) {
 //	alert("output = "+output.outputString);
+	alert("endHandler");
 	showMain();
 }
+
+
 
 function sortName(a, b) {
 	var x = a.toLowerCase();

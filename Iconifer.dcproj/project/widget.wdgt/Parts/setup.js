@@ -31,7 +31,7 @@ var dashcodePartSpecs = {
     "successDetails": { "text": "successDetails", "view": "DC.Text" },
     "successText": { "text": "success", "view": "DC.Text" },
     "text": { "text": "copyrightText", "view": "DC.Text" },
-    "type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "type", "onchange": "updateType", "options": [["iOS (app store + devices)", "0"], ["Mac (ICNS format)", "1"], ["Windows (ICO format)", "2"], ["Desktop (Mac + Windows)", "3"]], "rightImageWidth": 16, "view": "DC.View" },
+    "type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "type", "onchange": "updateType", "options": [["iOS (app store + devices)", "0"], ["Mac (ICNS format)", "1"], ["Windows (ICO format)", "2"], ["Desktop (Mac + Windows)", "3"], ["All (iOS + Mac + Windows)", "4"]], "rightImageWidth": 16, "view": "DC.View" },
     "wrongButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done", "view": "DC.View" },
     "wrongText": { "text": "wrong", "view": "DC.Text" }
 };
