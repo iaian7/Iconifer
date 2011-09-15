@@ -324,7 +324,7 @@ for (var i=0; i<uri.length; i++) {
 			command += " \\( +clone "+scale+" -resize x114 -write "+uriParts[i][1]+"-114"+uriParts[i][2]+" +delete \\)";
 			command += " \\( +clone "+scale+" -resize x72 -write "+uriParts[i][1]+"-72"+uriParts[i][2]+" +delete \\)";
 			command += scale+" -resize x57 "+uriParts[i][1]+"-57"+uriParts[i][2];
-			widget.system(command, endHandler).outputString;
+			widget.system(command, (i+1!=uri.length)?null:endHandler).outputString;
 			break;
 		case 1:
 //			alert("ICNS file: 512, 256, 128, 32, 16");
@@ -334,7 +334,7 @@ for (var i=0; i<uri.length; i++) {
 			command += " \\( +clone "+scale+" -resize x128 -write "+uriParts[i][1]+"-128.png +delete \\)";
 			command += " \\( +clone "+scale+" -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
 			command += scale+" -resize x16 "+uriParts[i][1]+"-16.png";
-			widget.system(command, endICNS).outputString;
+			widget.system(command, (i+1!=uri.length)?null:endICNS).outputString;
 			break;
 		case 2:
 //			alert("ICO file: 256, 48, 32, 24, 16");
@@ -344,7 +344,7 @@ for (var i=0; i<uri.length; i++) {
 			command += " \\( +clone "+scale+" -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
 			command += " \\( +clone "+scale+" -resize x24 -write "+uriParts[i][1]+"-24.png +delete \\)";
 			command += scale+" -resize x16 "+uriParts[i][1]+"-16.png";
-			widget.system(command, endICO).outputString;
+			widget.system(command, (i+1!=uri.length)?null:endICO).outputString;
 			break;
 		case 3:
 //			alert("ICNS, ICO");
@@ -356,7 +356,7 @@ for (var i=0; i<uri.length; i++) {
 			command += " \\( +clone "+scale+" -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
 			command += " \\( +clone "+scale+" -resize x24 -write "+uriParts[i][1]+"-24.png +delete \\)";
 			command += scale+" -resize x16 "+uriParts[i][1]+"-16.png";
-			widget.system(command, endICO).outputString;
+			widget.system(command, (i+1!=uri.length)?null:endICO).outputString;
 			break;
 		default:
 //			alert("PNG files, ICNS, ICO");
@@ -371,7 +371,7 @@ for (var i=0; i<uri.length; i++) {
 			command += " \\( +clone "+scale+" -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
 			command += " \\( +clone "+scale+" -resize x24 -write "+uriParts[i][1]+"-24.png +delete \\)";
 			command += scale+" -resize x16 "+uriParts[i][1]+"-16.png";
-			widget.system(command, endICO).outputString;
+			widget.system(command, (i+1!=uri.length)?null:endICO).outputString;
 		}
 	}
 	showSuccess(event);
@@ -386,7 +386,7 @@ for (var i=0; i<uri.length; i++) {
 function endICNS(event) {
 try {
 	for (i = 0; i < uri.length; i++){
-		widget.system(prefLocation+"png2icns "+uriParts[i][1]+".icns "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-16.png", endCleaner).outputString;
+		widget.system(prefLocation+"png2icns "+uriParts[i][1]+".icns "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-16.png", (i+1!=uri.length)?null:endCleaner).outputString;
 	}
 	alert("endICNS")
 	showSuccess(event);
@@ -400,12 +400,12 @@ function endICO(event) {
 try {
 	if (prefType >= 3) {
 		for (i = 0; i < uri.length; i++){
-			widget.system(prefLocation+"convert "+uriParts[i][1]+"-16.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+".ico", endICNS).outputString;
+			widget.system(prefLocation+"convert "+uriParts[i][1]+"-16.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+".ico", (i+1!=uri.length)?null:endICNS).outputString;
 		}
 		alert("endICO...")
 	} else {
 		for (i = 0; i < uri.length; i++){
-			widget.system(prefLocation+"convert "+uriParts[i][1]+"-16.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+".ico", endCleaner).outputString;
+			widget.system(prefLocation+"convert "+uriParts[i][1]+"-16.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+".ico", (i+1!=uri.length)?null:endCleaner).outputString;
 		}
 		alert("endICO")
 	}
@@ -420,24 +420,24 @@ function endCleaner(event) {
 try {
 	if (prefType == 1) {			// delete 512, 256, 128, 32, 16
 		for (i = 0; i < uri.length; i++){
-			widget.system("mv "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-16.png ~/.Trash/", endHandler).outputString;
+			widget.system("mv "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-16.png ~/.Trash/", (i+1!=uri.length)?null:endHandler).outputString;
 		}
-		alert("endCleaner 1")
+//		alert("endCleaner 1")
 	} else if (prefType == 2) {		// delete 256, 48, 32, 24, 16
 		for (i = 0; i < uri.length; i++){
-			widget.system("mv "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", endHandler).outputString;
+			widget.system("mv "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", (i+1!=uri.length)?null:endHandler).outputString;
 		}
-		alert("endCleaner 2")
+//		alert("endCleaner 2")
 	} else if (prefType == 3) {		// delete 512, 256, 128, 48, 32, 24, 16
 		for (i = 0; i < uri.length; i++){
-			widget.system("mv "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", endHandler).outputString;
+			widget.system("mv "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", (i+1!=uri.length)?null:endHandler).outputString;
 		}
-		alert("endCleaner 3")
+//		alert("endCleaner 3")
 	} else if (prefType >= 4) {		// delete 256, 128, 48, 32, 24, 16
 		for (i = 0; i < uri.length; i++){
-			widget.system("mv "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", endHandler).outputString;
+			widget.system("mv "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", (i+1!=uri.length)?null:endHandler).outputString;
 		}
-		alert("endCleaner 3")
+//		alert("endCleaner 4")
 	}
 	showSuccess(event);
 } catch (ex) {
@@ -543,7 +543,7 @@ function getKeyValue(plist, key) {
 
 function versionCheck(event) {
 	var request = new XMLHttpRequest();
-	var address = "http://iaian7.com/files/dashboard/sheets/version.php?RandomKey=" + Date.parse(new Date());
+	var address = "http://iaian7.com/files/dashboard/iconifer/version.php?RandomKey=" + Date.parse(new Date());
 	request.onload = function() { versionCheckEnd(request); };
 	request.open("GET", address);
 //	request.setRequestHeader("Cache-Control", "no-cache");
@@ -551,7 +551,6 @@ function versionCheck(event) {
 }
 
 function versionCheckEnd(request){
-/* REMOVE BEFORE DISTRIBUTION */	return false;
 	if (request.status == 200) {
 		var versions = request.responseText.split("\n");
 		var bundleVersion = getKeyValue("Info.plist", "CFBundleVersion");
@@ -573,7 +572,7 @@ function versionCheckEnd(request){
 // Download File
 
 function versionDownload() {
-	widget.openURL("http://iaian7.com/files/dashboard/sheets/Sheets.zip");
+	widget.openURL("http://iaian7.com/files/dashboard/iconifer/Iconifer.zip");
 	showMain();
 }
 
