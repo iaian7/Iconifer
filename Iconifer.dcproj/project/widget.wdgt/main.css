@@ -26,10 +26,10 @@ body {
     position: absolute;
     width: 13px;
     height: 13px;
-    right: 18px;
+    top: 20px;
+    right: 20px;
     margin-left: auto;
-    bottom: 18px;
-    margin-top: auto;
+    margin-bottom: auto;
 }
 
 #back {
@@ -42,45 +42,42 @@ body {
     top: 0px;
     left: 0px;
     right: 0px;
-    width: auto;
     bottom: 0px;
+    width: auto;
     height: auto;
 }
 
 #input {
     position: absolute;
     margin-top: 0px;
-    border-top-left-radius: 5px 5px;
-    border-top-right-radius: 5px 5px;
-    border-bottom-left-radius: 5px 5px;
-    border-bottom-right-radius: 5px 5px;
     border-width: 1px !important;
     border-style: solid;
     font-size: 13px;
     left: 0px;
-    background-color: rgba(0, 0, 0, 0);
     top: 0px;
-    margin-bottom: auto;
+    border-color: rgb(0, 0, 0);
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
     right: 0px;
     width: auto;
-    background-image: url(Images/Form-Background-Large.png);
-    border-color: rgba(0, 0, 0, 0.5);
-    height: 96px;
-    background-position: 50% 50%;
-    background-repeat: repeat no-repeat;
+    margin-bottom: auto;
+    height: 78px;
+    background-color: rgb(13, 13, 13);
 }
 
 #main {
     display: none;
     position: relative;
     height: 50px;
-    min-height: 164px;
     margin-left: 0px;
     margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
     width: auto;
-    border-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.496094);
+    min-height: 140px;
 }
 
 #stack {
@@ -88,27 +85,29 @@ body {
     z-index: 0;
     position: absolute;
     margin-top: 0px;
-    left: 22px;
-    top: 22px;
-    right: 22px;
+    top: 20px;
+    left: 20px;
+    right: 20px;
     width: auto;
-    bottom: 54px;
+    bottom: 20px;
     height: auto;
 }
 
 #doneSave {
-    font-family: HelveticaNeue-Bold;
     text-align: center;
     position: absolute;
     color: rgb(255, 255, 255);
-    height: 24px;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
-    right: 20px;
-    margin-left: auto;
-    bottom: 20px;
-    margin-top: auto;
     width: 55px;
     font-size: 14px;
+    height: 25px;
+    font-family: 'Helvetica Neue';
+    margin-left: auto;
+    margin-top: auto;
+    left: auto;
+    right: 20px;
+    top: auto;
+    bottom: 20px;
 }
 
 #text {
@@ -117,15 +116,15 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    margin-top: 0px;
-    left: 22px;
     font-size: 8pt;
     top: 208px;
-    right: 87px;
-    width: auto;
-    bottom: 20px;
-    height: auto;
     opacity: 0.5;
+    margin-top: auto;
+    margin-right: auto;
+    height: 12px;
+    left: 20px;
+    bottom: 20px;
+    width: 200px;
 }
 
 #successText {
@@ -137,31 +136,30 @@ body {
     font-size: 12pt;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     text-align: center;
-    height: auto;
-    font-weight: bold;
-    font-family: 'Helvetica Neue';
     min-height: 28px;
-    top: 48px;
+    font-family: 'Helvetica Neue';
+    height: 40px;
+    left: 0px;
+    top: 30px;
+    margin-bottom: auto;
+    right: 0px;
     width: auto;
-    left: 10px;
-    right: 10px;
-    bottom: 48px;
 }
 
 #success {
     width: 100%;
     display: none;
     position: relative;
-    min-height: 164px;
     height: auto;
+    min-height: 140px;
 }
 
 #fail {
     width: 100%;
     display: none;
     position: relative;
-    min-height: 164px;
     height: auto;
+    min-height: 140px;
 }
 
 #failText {
@@ -173,45 +171,44 @@ body {
     font-size: 12pt;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     text-align: center;
-    height: auto;
-    font-weight: bold;
-    font-family: 'Helvetica Neue';
     min-height: 28px;
-    top: 48px;
+    left: 0px;
+    height: 40px;
+    font-family: 'Helvetica Neue';
+    top: 30px;
+    margin-bottom: auto;
+    right: 0px;
     width: auto;
-    left: 10px;
-    right: 10px;
-    bottom: 48px;
 }
 
 #successButton {
-    font-family: HelveticaNeue-Bold;
     text-align: center;
     position: absolute;
     color: rgb(255, 255, 255);
-    height: 24px;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     font-size: 14px;
     left: 0px;
-    bottom: 2px;
     margin-top: auto;
     right: 0px;
     width: auto;
+    bottom: 0px;
+    height: 25px;
+    font-family: 'Helvetica Neue';
 }
 
 #failButton {
-    font-family: HelveticaNeue-Bold;
     text-align: center;
     position: absolute;
     color: rgb(255, 255, 255);
-    height: 24px;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     font-size: 14px;
     left: 0px;
-    bottom: 2px;
-    margin-top: auto;
     right: 0px;
     width: auto;
+    height: 25px;
+    font-family: 'Helvetica Neue';
+    bottom: 0px;
+    margin-top: auto;
 }
 
 #div {
@@ -231,50 +228,48 @@ body {
     width: 100%;
     display: none;
     position: relative;
-    min-height: 164px;
     height: auto;
+    min-height: 140px;
 }
 
 #wrongButton {
-    font-family: HelveticaNeue-Bold;
     text-align: center;
     position: absolute;
     color: rgb(255, 255, 255);
-    height: 24px;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     font-size: 14px;
     left: 0px;
-    bottom: 2px;
     margin-top: auto;
     right: 0px;
     width: auto;
+    height: 25px;
+    bottom: 0px;
+    font-family: 'Helvetica Neue';
 }
 
 #wrongText {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    margin-top: 0px;
     color: rgb(255, 255, 255);
     font-size: 12pt;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     text-align: center;
-    height: auto;
-    font-weight: bold;
-    font-family: 'Helvetica Neue';
     min-height: 28px;
-    top: 48px;
+    height: 40px;
+    left: 0px;
+    font-family: 'Helvetica Neue';
+    top: 30px;
+    margin-bottom: auto;
+    right: 0px;
     width: auto;
-    left: 10px;
-    right: 10px;
-    bottom: 48px;
 }
 
 #update {
     width: 100%;
-    min-height: 164px;
     display: none;
     position: relative;
+    min-height: 140px;
 }
 
 #new {
@@ -286,14 +281,13 @@ body {
     font-size: 12pt;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     text-align: center;
-    font-weight: bold;
-    font-family: 'Helvetica Neue';
     left: 0px;
-    top: 48px;
+    height: 25px;
+    font-family: 'Helvetica Neue';
+    top: 30px;
+    margin-bottom: auto;
     right: 0px;
     width: auto;
-    bottom: 98px;
-    height: auto;
 }
 
 #newVersion {
@@ -301,47 +295,48 @@ body {
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
-    color: rgb(255, 255, 255);
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     min-height: 0px;
-    font-weight: bold;
-    font-family: 'Helvetica Neue';
     font-size: 10pt;
     left: 0px;
     text-align: center;
-    top: 78px;
+    color: rgb(191, 191, 191);
+    font-family: 'Helvetica Neue';
+    height: 50px;
+    top: 60px;
+    margin-bottom: auto;
     right: 0px;
     width: auto;
-    bottom: 28px;
-    height: auto;
 }
 
 #skip {
-    font-family: HelveticaNeue-Bold;
     text-align: center;
     position: absolute;
-    margin-top: 0px;
     font-size: 14px;
     color: rgb(255, 255, 255);
-    height: 24px;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     left: 0px;
-    top: 138px;
-    width: 124px;
+    margin-top: auto;
+    margin-right: auto;
+    height: 25px;
+    width: 125px;
+    bottom: 0px;
+    font-family: 'Helvetica Neue';
 }
 
 #download {
-    font-family: HelveticaNeue-Bold;
     text-align: center;
     position: absolute;
-    margin-top: 0px;
     font-size: 14px;
     color: rgb(255, 255, 255);
-    height: 24px;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
-    top: 138px;
-    width: 124px;
-    left: 132px;
+    margin-left: auto;
+    margin-top: auto;
+    bottom: 0px;
+    right: 0px;
+    height: 25px;
+    width: 125px;
+    font-family: 'Helvetica Neue';
 }
 
 #iaian7com {
@@ -349,19 +344,21 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    color: rgb(255, 255, 255);
-    font-size: 10pt;
     text-align: left;
-    left: 22px;
-    top: 156px;
-    margin-bottom: auto;
-    right: 78px;
-    width: auto;
-    height: 30px;
+    left: 20px;
+    text-shadow: none;
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+    width: 200px;
+    font-size: 8pt;
+    line-height: 10px;
+    height: 25px;
+    margin-right: auto;
+    bottom: 30px;
+    margin-top: auto;
 }
 
 #type {
-    font-family: HelveticaNeue-Bold;
     position: absolute;
     font-size: 14px;
     color: rgb(255, 255, 255);
@@ -369,13 +366,14 @@ body {
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     text-align: center;
     left: 0px;
-    right: 0px;
-    width: auto;
-    top: 107px;
-    margin-bottom: auto;
     overflow: hidden;
     text-overflow: clip;
-    height: 24px;
+    height: 25px;
+    top: 90px;
+    margin-bottom: auto;
+    right: 0px;
+    width: auto;
+    font-family: 'Helvetica Neue';
 }
 
 #loc {
@@ -386,20 +384,17 @@ body {
     border-bottom-left-radius: 5px 5px;
     border-bottom-right-radius: 5px 5px;
     border-width: 1px;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url(Images/formBackground%202.png);
     border-style: solid;
-    left: 22px;
-    width: 252px;
-    font-size: 11pt;
     font-family: 'Helvetica Neue';
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.5);
-    margin-right: auto;
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.496094);
+    font-size: 10pt;
+    width: 156px;
+    right: 20px;
+    margin-left: auto;
+    top: 20px;
     margin-bottom: auto;
-    top: 38px;
-    background-position: 50% 50%;
-    background-repeat: repeat no-repeat;
 }
 
 #locationText {
@@ -410,11 +405,12 @@ body {
     color: rgb(255, 255, 255);
     font-size: 10pt;
     text-align: left;
-    left: 22px;
-    height: 18px;
-    top: 22px;
+    height: 20px;
+    text-shadow: rgb(0, 0, 0) 0px -1px 0px;
+    top: 23px;
+    left: 20px;
     margin-bottom: auto;
-    right: 22px;
+    right: 185px;
     width: auto;
 }
 
@@ -423,19 +419,18 @@ body {
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
-    color: rgb(255, 255, 255);
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
     min-height: 0px;
-    font-weight: bold;
-    font-family: 'Helvetica Neue';
     font-size: 10pt;
     left: 0px;
     text-align: center;
+    font-family: 'Helvetica Neue';
+    color: rgb(128, 128, 128);
+    height: 40px;
+    top: 80px;
+    margin-bottom: auto;
     right: 0px;
     width: auto;
-    bottom: 28px;
-    height: auto;
-    top: 98px;
 }
 
 #sharpSize {
@@ -447,20 +442,19 @@ body {
     border-bottom-left-radius: 5px 5px;
     border-bottom-right-radius: 5px 5px;
     border-width: 1px;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url(Images/formBackground%202.png);
     border-style: solid;
-    font-size: 11pt;
     overflow: hidden;
-    border-color: rgba(0, 0, 0, 0.5);
-    width: 51px;
-    left: 91px;
-    margin-right: auto;
-    top: 88px;
-    margin-bottom: auto;
     text-align: center;
-    background-position: 50% 50%;
-    background-repeat: repeat no-repeat;
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.496094);
+    width: 46px;
+    font-size: 10pt;
+    right: 130px;
+    margin-left: auto;
+    margin-bottom: auto;
+    left: auto;
+    bottom: auto;
+    top: 80px;
 }
 
 #sharpAmount {
@@ -472,20 +466,19 @@ body {
     border-bottom-left-radius: 5px 5px;
     border-bottom-right-radius: 5px 5px;
     border-width: 1px;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url(Images/formBackground%202.png);
     border-style: solid;
-    font-size: 11pt;
     overflow: hidden;
-    border-color: rgba(0, 0, 0, 0.5);
-    width: 51px;
-    left: 154px;
-    margin-right: auto;
-    top: 88px;
-    margin-bottom: auto;
     text-align: center;
-    background-position: 50% 50%;
-    background-repeat: repeat no-repeat;
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.496094);
+    width: 46px;
+    font-size: 10pt;
+    right: 75px;
+    margin-left: auto;
+    margin-bottom: auto;
+    left: auto;
+    bottom: auto;
+    top: 80px;
 }
 
 #sharpAmountText {
@@ -493,15 +486,20 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    color: rgb(255, 255, 255);
-    font-size: 10pt;
-    top: 72px;
-    height: 18px;
-    width: 55px;
-    left: 154px;
-    margin-right: auto;
-    margin-bottom: auto;
+    letter-spacing: 0px;
+    font-size: 8pt;
+    width: 50px;
+    height: 15px;
     text-align: center;
+    text-shadow: none;
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+    right: 75px;
+    margin-left: auto;
+    margin-bottom: auto;
+    left: auto;
+    bottom: auto;
+    top: 101px;
 }
 
 #sharpSizeText {
@@ -509,31 +507,35 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    color: rgb(255, 255, 255);
-    font-size: 10pt;
-    top: 72px;
-    width: 55px;
-    left: 91px;
-    margin-right: auto;
-    margin-bottom: auto;
-    height: 18px;
+    font-size: 8pt;
+    width: 50px;
+    height: 15px;
     text-align: center;
+    text-shadow: none;
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+    right: 130px;
+    margin-left: auto;
+    margin-bottom: auto;
+    left: auto;
+    bottom: auto;
+    top: 101px;
 }
 
 #scale {
     position: absolute;
-    font-size: 14px;
     color: rgb(255, 255, 255);
     opacity: 1;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
-    height: 24px;
     font-family: 'Helvetica Neue';
     text-align: left;
-    top: 120px;
-    width: 150px;
-    margin-bottom: auto;
-    right: 22px;
+    height: 25px;
+    font-size: 14px;
+    width: 160px;
+    top: 49px;
+    right: 20px;
     margin-left: auto;
+    margin-bottom: auto;
 }
 
 #scaleText {
@@ -544,11 +546,12 @@ body {
     color: rgb(255, 255, 255);
     font-size: 10pt;
     text-align: left;
-    height: 15px;
-    left: 22px;
-    width: 98px;
     line-height: 16px;
-    top: 126px;
+    left: 20px;
+    width: 95px;
+    height: 20px;
+    text-shadow: rgb(0, 0, 0) 0px -1px 0px;
+    top: 54px;
     margin-right: auto;
     margin-bottom: auto;
 }
@@ -558,15 +561,20 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    color: rgb(255, 255, 255);
-    font-size: 10pt;
-    height: 18px;
-    top: 72px;
-    width: 55px;
-    left: 223px;
-    margin-right: auto;
-    margin-bottom: auto;
+    letter-spacing: 0px;
+    font-size: 8pt;
+    width: 50px;
+    height: 15px;
     text-align: center;
+    text-shadow: none;
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+    right: 20px;
+    margin-left: auto;
+    margin-bottom: auto;
+    left: auto;
+    bottom: auto;
+    top: 101px;
 }
 
 #sharpThresh {
@@ -578,20 +586,19 @@ body {
     border-bottom-left-radius: 5px 5px;
     border-bottom-right-radius: 5px 5px;
     border-width: 1px;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url(Images/formBackground%202.png);
     border-style: solid;
-    font-size: 11pt;
     overflow: hidden;
-    border-color: rgba(0, 0, 0, 0.5);
-    width: 51px;
-    left: 223px;
-    margin-right: auto;
-    top: 88px;
-    margin-bottom: auto;
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.496094);
+    width: 46px;
     text-align: center;
-    background-position: 50% 50%;
-    background-repeat: repeat no-repeat;
+    font-size: 10pt;
+    right: 20px;
+    margin-left: auto;
+    margin-bottom: auto;
+    left: auto;
+    bottom: auto;
+    top: 80px;
 }
 
 #sharpSettingsText {
@@ -602,30 +609,34 @@ body {
     color: rgb(255, 255, 255);
     font-size: 10pt;
     text-align: left;
-    left: 22px;
-    width: 55px;
-    height: 39px;
     line-height: 12px;
-    top: 73px;
+    width: 95px;
+    height: 20px;
+    text-shadow: rgb(0, 0, 0) 0px -1px 0px;
+    left: 20px;
     margin-right: auto;
     margin-bottom: auto;
+    right: auto;
+    bottom: auto;
+    top: 84px;
 }
 
 #box {
     border-style: solid;
     border-width: 1px;
     position: absolute;
-    margin-top: 0px;
     left: 0px;
-    top: 107px;
-    width: 254px;
-    border-color: rgba(0, 0, 0, 0.5);
     border-top-left-radius: 5px 5px;
     border-top-right-radius: 5px 5px;
     border-bottom-left-radius: 5px 5px;
     border-bottom-right-radius: 5px 5px;
-    height: 54px;
-    background-color: rgba(0, 0, 0, 0.3);
+    height: 48px;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(13, 13, 13);
+    top: 90px;
+    margin-bottom: auto;
+    right: 0px;
+    width: auto;
 }
 
 #feedback {
@@ -633,16 +644,15 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    margin-top: 0px;
     left: 0px;
-    right: 0px;
-    width: auto;
-    color: rgb(255, 255, 255);
     font-size: 10px;
     text-align: center;
-    height: auto;
-    bottom: 8px;
-    top: 138px;
+    right: 0px;
+    width: auto;
+    height: 20px;
+    top: 120px;
+    margin-bottom: auto;
+    color: rgb(128, 128, 128);
 }
 
 .selected #feedback {
@@ -653,35 +663,56 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    margin-top: 0px;
-    color: rgb(255, 255, 255);
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
-    text-align: center;
-    left: 30px;
     font-size: 10pt;
     font-family: 'Helvetica Neue';
-    top: 62px;
-    right: 30px;
+    color: rgb(128, 128, 128);
+    text-align: left;
+    left: 80px;
+    right: 0px;
     width: auto;
-    bottom: 14px;
-    height: auto;
+    height: 20px;
+    margin-top: auto;
+    bottom: 18px;
 }
 
 #drop {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    margin-top: 0px;
-    left: 30px;
-    color: rgb(255, 255, 255);
     font-size: 12pt;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
-    text-align: center;
-    right: 30px;
+    font-family: 'Helvetica Neue';
+    text-align: left;
+    color: rgb(191, 191, 191);
+    width: auto;
+    top: 22px;
+    left: 80px;
+    right: 0px;
+    margin-bottom: auto;
+    height: 22px;
+}
+
+#image {
+    position: absolute;
+    margin-top: 0px;
+    width: 64px;
+    height: 64px;
+    top: 7px;
+    margin-right: auto;
+    margin-bottom: auto;
+    left: 7px;
+}
+
+#inner_image {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
-    font-weight: bold;
-    font-family: 'Helvetica Neue';
-    top: 38px;
-    bottom: 34px;
 }

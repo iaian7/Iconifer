@@ -12,8 +12,8 @@
 		<integer>0</integer>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1675, 345}}</string>
-			<string>{{0, 355}, {1675, 625}}</string>
+			<string>{{0, 0}, {1675, 404}}</string>
+			<string>{{0, 414}, {1675, 625}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -66,8 +66,8 @@
 		<integer>0</integer>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {244, 1001}}</string>
-			<string>{{245, 0}, {1676, 1001}}</string>
+			<string>{{0, 0}, {244, 1060}}</string>
+			<string>{{245, 0}, {1676, 1060}}</string>
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
@@ -82,8 +82,8 @@
 		<integer>0</integer>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {246, 598}}</string>
-			<string>{{0, 608}, {246, 372}}</string>
+			<string>{{0, 0}, {246, 634}}</string>
+			<string>{{0, 644}, {246, 395}}</string>
 		</array>
 	</dict>
 	<key>Objects view expanded items</key>
@@ -225,12 +225,71 @@
 	</array>
 	<key>Widget</key>
 	<dict>
-		<key>Objects view last selections</key>
+		<key>Objects view expanded items</key>
 		<array>
 			<array>
 				<integer>0</integer>
 			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>0</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>4</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>3</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</array>
 		</array>
+		<key>Objects view last selections</key>
+		<array/>
 		<key>Visible StackLayout Views</key>
 		<array>
 			<string>front</string>

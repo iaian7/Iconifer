@@ -13,6 +13,7 @@ var dashcodePartSpecs = {
     "failText": { "text": "fail", "view": "DC.Text" },
     "feedback": { "text": "feedback", "view": "DC.Text" },
     "iaian7com": { "text": "iaian7com", "view": "DC.Text" },
+    "image": { "view": "DC.ImageLayout" },
     "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "showBack", "view": "DC.View" },
     "locationText": { "text": "locationText", "view": "DC.Text" },
     "new": { "text": "new", "view": "DC.Text" },
@@ -33,6 +34,7 @@ var dashcodePartSpecs = {
     "wrongButton": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showMain", "rightImageWidth": 5, "text": "done", "view": "DC.View" },
     "wrongText": { "text": "wrong", "view": "DC.Text" }
 };
+
 
 
 

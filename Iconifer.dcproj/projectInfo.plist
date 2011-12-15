@@ -6,10 +6,12 @@
 	<dict>
 		<key>Widget</key>
 		<dict>
+			<key>AppIconFGImagePoint</key>
+			<string>{0, -0}</string>
 			<key>AppIconFGImageSize</key>
 			<string>{75, 75}</string>
 			<key>AppIconImageSettings</key>
-			<string>image-theme: 2; image-shape: 3; image-opacity: 1.00; image-top-color: 0.310582131,0.384557873,0.212542921,1; image-bottom-color: 0.615400016,0.615400016,0.615400016,1; image-radius: 10,10,10,10; image-border: 1; image-border-color: 0,0,0,0.5; image-border-width: 1; shine-on: 0; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; embossed-on: 0; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; image-include-custom: 1; image-custom-image-path: Icon-75.png; image-custom-center: 1; image-custom-resize: 2; shadow-include-shadow: 0;</string>
+			<string>image-theme: 2; image-shape: 3; image-opacity: 1.00; image-top-color: 0.310582131,0.384557873,0.212542921,1; image-bottom-color: 0.615400016,0.615400016,0.615400016,1; image-radius: 10,10,10,10; image-border: 1; image-border-color: 0,0,0,0.5; image-border-width: 1; shine-on: 0; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; embossed-on: 0; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; image-include-custom: 1; image-custom-image-path: Icon-128.png; image-custom-center: 1; image-custom-resize: 2; shadow-include-shadow: 0;</string>
 			<key>AppIconIncludeFGImage</key>
 			<false/>
 			<key>CYBackwardCompatibleExport</key>
@@ -101,6 +103,8 @@
 			</array>
 			<key>TemplateIdentifier</key>
 			<string>com.apple.Dashcode.template.custom</string>
+			<key>UseCustomAppIcon</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>CYProjectFormatVersion</key>
