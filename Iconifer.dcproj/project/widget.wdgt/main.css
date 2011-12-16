@@ -186,7 +186,6 @@ body {
     position: absolute;
     color: rgb(255, 255, 255);
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
-    font-size: 14px;
     left: 0px;
     margin-top: auto;
     right: 0px;
@@ -194,6 +193,7 @@ body {
     bottom: 0px;
     height: 25px;
     font-family: 'Helvetica Neue';
+    font-size: 14px;
 }
 
 #failButton {
@@ -302,11 +302,11 @@ body {
     text-align: center;
     color: rgb(191, 191, 191);
     font-family: 'Helvetica Neue';
-    height: 50px;
-    top: 60px;
     margin-bottom: auto;
     right: 0px;
     width: auto;
+    top: 70px;
+    height: 40px;
 }
 
 #skip {
@@ -360,7 +360,6 @@ body {
 
 #type {
     position: absolute;
-    font-size: 14px;
     color: rgb(255, 255, 255);
     opacity: 1;
     text-shadow: rgb(0, 0, 0) 0px -1px 1px;
@@ -374,6 +373,7 @@ body {
     right: 0px;
     width: auto;
     font-family: 'Helvetica Neue';
+    font-size: 14px;
 }
 
 #loc {
@@ -427,7 +427,7 @@ body {
     font-family: 'Helvetica Neue';
     color: rgb(128, 128, 128);
     height: 40px;
-    top: 80px;
+    top: 70px;
     margin-bottom: auto;
     right: 0px;
     width: auto;
@@ -690,7 +690,7 @@ body {
     left: 80px;
     right: 0px;
     margin-bottom: auto;
-    height: 22px;
+    height: 20px;
 }
 
 #image {

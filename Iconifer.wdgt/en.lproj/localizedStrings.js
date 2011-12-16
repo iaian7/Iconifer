@@ -5,7 +5,7 @@
  code generator otherwise the changes will be lost.
  */
 var localizedStrings = {
-    "copyrightText": "©2010 John Einselen / Vectorform LLC",
+    "copyrightText": "©2011 John Einselen / Vectorform LLC",
     "done": "done",
     "download": "download",
     "drop": "drop image files here",
@@ -14,7 +14,7 @@ var localizedStrings = {
     "fail": "file processing failed\nplease try again",
     "feedback": "PNG files: 512, 114, 72, 57",
     "iaian7com": "For more information, please visit iaian7.com/dashboard/iconifer",
-    "locationText": "ImageMagick install location",
+    "locationText": "ImageMagick",
     "nameFileText": "file sheet prefix",
     "nameSpriteText": "sprite sheet suffix",
     "nameText": "sprite sheet suffix",
@@ -24,14 +24,15 @@ var localizedStrings = {
     "outputText": "output files",
     "scaleText": "resize algorithm",
     "sharpAmount": "amount",
-    "sharpSettings": "unsharp\nmask\nsettings",
+    "sharpSettings": "unsharp mask",
     "sharpSize": "size",
     "sharpThresh": "threshold",
     "skip": "skip version",
-    "success": "file processing successful, busy creating icons",
-    "successDetails": "depending on image sizes\nthis could take a minute",
+    "success": "file processing successful,\nbusy creating icons",
+    "successDetails": "this could take a minute\ndepending on image size",
     "wrong": "wrong file format\nplease try again"
 };
+
 
 
 

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CYLastWindowPosition</key>
+	<string>{1313, 392}</string>
 	<key>ContentSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -50,9 +52,9 @@
 		<key>Save</key>
 		<true/>
 		<key>SavePath</key>
-		<string>/Users/admin/Dropbox/Documents/Widgets/VF Sheets</string>
+		<string>/Volumes/Projects HD/0-Git/Iconifer</string>
 		<key>WidgetDeployName</key>
-		<string>Sheets</string>
+		<string>Iconifer</string>
 		<key>enableSimulation</key>
 		<true/>
 		<key>simulatedHost</key>

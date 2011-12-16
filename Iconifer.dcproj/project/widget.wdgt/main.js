@@ -129,7 +129,7 @@ var prefSharpSize = loadPref(wid+"sharpSize","1");
 var prefSharpAmount = loadPref(wid+"sharpAmount","1");
 var prefSharpThresh = loadPref(wid+"sharpThresh","0.1");
 var prefScale = loadPref(wid+"scale",3);
-var prefOutput = loadPref(wid+"output",0);
+//var prefOutput = loadPref(wid+"output",0);
 
 // Preference Saving
 
@@ -151,7 +151,7 @@ function loadPrefs() {
 	document.getElementById("sharpAmount").value = prefSharpAmount;
 	document.getElementById("sharpThresh").value = prefSharpThresh;
 	document.getElementById("scale").object.setSelectedIndex(prefScale);
-	document.getElementById("output").object.setSelectedIndex(prefOutput);
+//	document.getElementById("output").object.setSelectedIndex(prefOutput);
 	updateFeedback();
 }
 
@@ -169,7 +169,7 @@ function updatePrefs() {
 		widget.setPreferenceForKey(prefSharpAmount,wid+"sharpAmount");
 		widget.setPreferenceForKey(prefSharpThresh,wid+"sharpThresh");
 		widget.setPreferenceForKey(prefScale,wid+"scale");
-		widget.setPreferenceForKey(prefOutput,wid+"output");
+//		widget.setPreferenceForKey(prefOutput,wid+"output");
 	}
 }
 
@@ -238,7 +238,7 @@ function updateScale(event) {
 }
 
 function updateOutput(event) {
-	prefOutput = document.getElementById("output").object.getSelectedIndex();
+//	prefOutput = document.getElementById("output").object.getSelectedIndex();
 	updatePrefs();
 }
 
