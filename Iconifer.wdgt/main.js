@@ -195,25 +195,21 @@ function updateType(event) {
 
 function updateFeedback(event) {
 	switch (prefType) {
-		case 0:
+		case 0:	//	iOS (app store + devices)
 			document.getElementById("feedback").innerHTML = "PNG files: 512, 114, 72, 57";
 			break;
-		case 1:
+		case 1:	//	Mac (ICNS format)
 			document.getElementById("feedback").innerHTML = "ICNS file: 512, 256, 128, 32, 16";
 			break;
-		case 2:
+		case 2:	//	Windows (ICO format)
 			document.getElementById("feedback").innerHTML = "ICO file: 256, 48, 32, 24, 16";
 			break;
-		case 3:
+		case 3:	//	Desktop (Mac + Windows)
 			document.getElementById("feedback").innerHTML = "ICNS, ICO";
 			break;
-		default:
+		default://	All the icons
 			document.getElementById("feedback").innerHTML = "PNG, ICNS, ICO";
 		}
-//	iOS (app store + devices)
-//	Mac (ICNS format)
-//	Windows (ICO format)
-//	Desktop (Mac + Windows)
 }
 
 function updateLoc(event) {
