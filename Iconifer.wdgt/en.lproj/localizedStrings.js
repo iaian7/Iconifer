@@ -5,7 +5,7 @@
  code generator otherwise the changes will be lost.
  */
 var localizedStrings = {
-    "copyrightText": "©2011 John Einselen / Vectorform LLC",
+    "copyrightText": "©2012 John Einselen / Vectorform LLC",
     "done": "done",
     "download": "download",
     "drop": "drop image files here",
@@ -32,6 +32,7 @@ var localizedStrings = {
     "successDetails": "this could take a minute\ndepending on image size",
     "wrong": "wrong file format\nplease try again"
 };
+
 
 
 

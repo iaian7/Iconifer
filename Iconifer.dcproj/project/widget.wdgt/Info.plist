@@ -17,9 +17,9 @@
 	<key>CFBundleName</key>
 	<string>Ratio</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
+	<string>2.0.5</string>
 	<key>CFBundleVersion</key>
-	<string>2.0</string>
+	<string>2.0.5</string>
 	<key>CloseBoxInsetX</key>
 	<integer>15</integer>
 	<key>CloseBoxInsetY</key>
