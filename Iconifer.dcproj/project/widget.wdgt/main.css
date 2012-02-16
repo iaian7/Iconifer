@@ -116,7 +116,6 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    font-size: 8pt;
     top: 208px;
     opacity: 0.5;
     margin-top: auto;
@@ -125,6 +124,7 @@ body {
     left: 20px;
     bottom: 20px;
     width: 200px;
+    font-size: 11px;
 }
 
 #successText {
@@ -351,12 +351,13 @@ body {
     color: rgb(255, 255, 255);
     opacity: 0.5;
     width: 200px;
-    font-size: 8pt;
     line-height: 10px;
     height: 25px;
     margin-right: auto;
-    bottom: 30px;
     margin-top: auto;
+    bottom: 28px;
+    font-size: 11px;
+    letter-spacing: 0px;
 }
 
 #type {
@@ -489,7 +490,6 @@ body {
     overflow: hidden;
     position: absolute;
     letter-spacing: 0px;
-    font-size: 8pt;
     width: 50px;
     height: 15px;
     text-align: center;
@@ -500,6 +500,7 @@ body {
     right: 75px;
     margin-left: auto;
     margin-bottom: auto;
+    font-size: 11px;
 }
 
 #sharpSizeText {
@@ -507,7 +508,6 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
-    font-size: 8pt;
     width: 50px;
     height: 15px;
     text-align: center;
@@ -518,6 +518,7 @@ body {
     right: 130px;
     margin-left: auto;
     margin-bottom: auto;
+    font-size: 11px;
 }
 
 #scale {
@@ -560,7 +561,6 @@ body {
     overflow: hidden;
     position: absolute;
     letter-spacing: 0px;
-    font-size: 8pt;
     width: 50px;
     height: 15px;
     text-align: center;
@@ -571,6 +571,7 @@ body {
     right: 20px;
     margin-left: auto;
     margin-bottom: auto;
+    font-size: 11px;
 }
 
 #sharpThresh {

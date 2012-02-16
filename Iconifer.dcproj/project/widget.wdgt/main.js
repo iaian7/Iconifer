@@ -34,7 +34,7 @@ function remove()
 function hide()
 {
 	// Stop any timers to prevent CPU usage
-	savePrefs();
+	updatePrefs();
 }
 
 //
@@ -153,12 +153,6 @@ function loadPrefs() {
 	document.getElementById("scale").object.setSelectedIndex(prefScale);
 //	document.getElementById("output").object.setSelectedIndex(prefOutput);
 	updateFeedback();
-}
-
-function savePref(key,value) {
-	if (window.widget) {
-		widget.setPreferenceForKey(value,wid+key);
-	}
 }
 
 function updatePrefs() {
@@ -558,10 +552,10 @@ function versionCheckEnd(request){
 			document.getElementById("newVersion").innerHTML = "version "+versions[0]+"<br/>"+versions[1];
 			return showUpdate();
 		} else {
-			alert("you have an up to date version");
+//			alert("you have an up to date version");
 		}
 	} else {
-		alert("there's been an error fetching HTTP data");
+//		alert("there's been an error fetching HTTP data");
 	}
 }
 

@@ -298,8 +298,8 @@
 		</array>
 		<key>Visible StackLayout Views</key>
 		<array>
-			<string>update</string>
 			<string>front</string>
+			<string>main</string>
 		</array>
 	</dict>
 </dict>
