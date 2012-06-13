@@ -190,7 +190,7 @@ function updateType(event) {
 function updateFeedback(event) {
 	switch (prefType) {
 		case 0:	//	iOS (app store + devices)
-			document.getElementById("feedback").innerHTML = "PNG files: 512, 114, 72, 57";
+			document.getElementById("feedback").innerHTML = "PNG files: 512, 144, 114, 72, 57,...";
 			break;
 		case 1:	//	Mac (ICNS format)
 			document.getElementById("feedback").innerHTML = "ICNS file: 512, 256, 128, 32, 16";
@@ -307,13 +307,32 @@ var command = "";
 for (var i=0; i<uri.length; i++) {
 	switch (prefType) {
 		case 0:
-//			alert("PNG files: 512, 114, 72, 57");
+//			alert("PNG files: 512, 144, 114, 72, 57,...");
+/* old icon set */
+//			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x512";
+//			command += " \\( +clone -write "+uriParts[i][1]+"-512"+uriParts[i][2]+" +delete \\)";
+//			command += " -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x256";
+//			command += " \\( +clone "+scale+" -resize x144 -write "+uriParts[i][1]+"-144"+uriParts[i][2]+" +delete \\)";
+//			command += " \\( +clone "+scale+" -resize x114 -write "+uriParts[i][1]+"-114"+uriParts[i][2]+" +delete \\)";
+//			command += " \\( +clone "+scale+" -resize x72 -write "+uriParts[i][1]+"-72"+uriParts[i][2]+" +delete \\)";
+//			command += scale+" -resize x57 "+uriParts[i][1]+"-57"+uriParts[i][2];
 			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x512";
-			command += " \\( +clone -write "+uriParts[i][1]+"-512"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone -write "+uriParts[i][1]+"-iTunes"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone "+scale+" -resize x320 -write "+uriParts[i][1]+"-documentLarge"+uriParts[i][2]+" +delete \\)";
+
 			command += " -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x256";
-			command += " \\( +clone "+scale+" -resize x114 -write "+uriParts[i][1]+"-114"+uriParts[i][2]+" +delete \\)";
-			command += " \\( +clone "+scale+" -resize x72 -write "+uriParts[i][1]+"-72"+uriParts[i][2]+" +delete \\)";
-			command += scale+" -resize x57 "+uriParts[i][1]+"-57"+uriParts[i][2];
+			command += " \\( +clone "+scale+" -resize x144 -write "+uriParts[i][1]+"-iPad@2x"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone "+scale+" -resize x128 -write "+uriParts[i][1]+"-document@2x"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone "+scale+" -resize x114 -write "+uriParts[i][1]+"-iPhone@2x"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone "+scale+" -resize x96 -write "+uriParts[i][1]+"-spotlight@2x"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone "+scale+" -resize x72 -write "+uriParts[i][1]+"-iPad"+uriParts[i][2]+" +delete \\)";
+
+			command += " -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x128";
+			command += " \\( +clone "+scale+" -resize x64 -write "+uriParts[i][1]+"-document"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone "+scale+" -resize x58 -write "+uriParts[i][1]+"-settings@2x"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone "+scale+" -resize x57 -write "+uriParts[i][1]+"-iPhone"+uriParts[i][2]+" +delete \\)";
+			command += " \\( +clone "+scale+" -resize x48 -write "+uriParts[i][1]+"-spotlight"+uriParts[i][2]+" +delete \\)";
+			command += scale+" -resize x29 "+uriParts[i][1]+"-settings"+uriParts[i][2];
 			widget.system(command, (i+1!=uri.length)?null:endHandler).outputString;
 			break;
 		case 1:
@@ -352,13 +371,27 @@ for (var i=0; i<uri.length; i++) {
 //			alert("PNG files, ICNS, ICO");
 			command = prefLocation+"convert "+uri[i]+" -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x512";
 			command += " \\( +clone -write "+uriParts[i][1]+"-512.png +delete \\)";
+			command += " \\( +clone -write "+uriParts[i][1]+"-iTunes.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x320 -write "+uriParts[i][1]+"-documentLarge.png +delete \\)";
 			command += " \\( +clone "+scale+" -resize x256 -write "+uriParts[i][1]+"-256.png +delete \\)";
+
+			command += " -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x256";
+			command += " \\( +clone -write "+uriParts[i][1]+"-256.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x144 -write "+uriParts[i][1]+"-iPad@2x.png +delete \\)";
 			command += " \\( +clone "+scale+" -resize x128 -write "+uriParts[i][1]+"-128.png +delete \\)";
-			command += " \\( +clone "+scale+" -resize x114 -write "+uriParts[i][1]+"-114.png +delete \\)";
-			command += " \\( +clone "+scale+" -resize x72 -write "+uriParts[i][1]+"-72.png +delete \\)";
-			command += " \\( +clone "+scale+" -resize x57 -write "+uriParts[i][1]+"-57.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x128 -write "+uriParts[i][1]+"-document@2x.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x114 -write "+uriParts[i][1]+"-iPhone@2x.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x96 -write "+uriParts[i][1]+"-spotlight@2x.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x72 -write "+uriParts[i][1]+"-iPad.png +delete \\)";
+
+			command += " -unsharp 0x"+prefSharpSize+"+"+prefSharpAmount+"+"+prefSharpThresh+scale+" -resize x128";
+			command += " \\( +clone "+scale+" -resize x64 -write "+uriParts[i][1]+"-document.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x58 -write "+uriParts[i][1]+"-settings@2x.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x57 -write "+uriParts[i][1]+"-iPhone.png +delete \\)";
 			command += " \\( +clone "+scale+" -resize x48 -write "+uriParts[i][1]+"-48.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x48 -write "+uriParts[i][1]+"-spotlight.png +delete \\)";
 			command += " \\( +clone "+scale+" -resize x32 -write "+uriParts[i][1]+"-32.png +delete \\)";
+			command += " \\( +clone "+scale+" -resize x29 -write "+uriParts[i][1]+"-settings.png +delete \\)";
 			command += " \\( +clone "+scale+" -resize x24 -write "+uriParts[i][1]+"-24.png +delete \\)";
 			command += scale+" -resize x16 "+uriParts[i][1]+"-16.png";
 			widget.system(command, (i+1!=uri.length)?null:endICO).outputString;
@@ -423,9 +456,9 @@ try {
 			widget.system("mv "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", (i+1!=uri.length)?null:endHandler).outputString;
 		}
 //		alert("endCleaner 3")
-	} else if (prefType >= 4) {		// delete 256, 128, 48, 32, 24, 16
+	} else if (prefType >= 4) {		// delete 512, 256, 128, 48, 32, 24, 16
 		for (i = 0; i < uri.length; i++){
-			widget.system("mv "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", (i+1!=uri.length)?null:endHandler).outputString;
+			widget.system("mv "+uriParts[i][1]+"-512.png "+uriParts[i][1]+"-256.png "+uriParts[i][1]+"-128.png "+uriParts[i][1]+"-48.png "+uriParts[i][1]+"-32.png "+uriParts[i][1]+"-24.png "+uriParts[i][1]+"-16.png ~/.Trash/", (i+1!=uri.length)?null:endHandler).outputString;
 		}
 //		alert("endCleaner 4")
 	}
