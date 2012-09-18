@@ -48,7 +48,7 @@
 	<key>DeploymentOptions</key>
 	<dict>
 		<key>Destination</key>
-		<string>aos.default</string>
+		<string>localhost.default</string>
 		<key>Save</key>
 		<true/>
 		<key>SavePath</key>
@@ -58,7 +58,7 @@
 		<key>enableSimulation</key>
 		<true/>
 		<key>simulatedHost</key>
-		<string>web.me.com</string>
+		<string>vf-06-decamac.local</string>
 	</dict>
 	<key>Design time language</key>
 	<string>en.lproj</string>
@@ -291,11 +291,19 @@
 			</array>
 		</array>
 		<key>Objects view last selections</key>
-		<array/>
+		<array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>0</integer>
+				<integer>3</integer>
+			</array>
+		</array>
 		<key>Visible StackLayout Views</key>
 		<array>
+			<string>front</string>
 			<string>main</string>
-			<string>back</string>
 		</array>
 	</dict>
 </dict>

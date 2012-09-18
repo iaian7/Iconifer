@@ -50,16 +50,14 @@ body {
 #input {
     position: absolute;
     margin-top: 0px;
-    border-width: 1px !important;
-    border-style: solid;
+    border: 1px solid rgb(0, 0, 0) !important;
     font-size: 13px;
     left: 0px;
     top: 0px;
-    border-color: rgb(0, 0, 0);
-    border-top-left-radius: 5px 5px;
-    border-top-right-radius: 5px 5px;
-    border-bottom-left-radius: 5px 5px;
-    border-bottom-right-radius: 5px 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     right: 0px;
     width: auto;
     margin-bottom: auto;
@@ -71,10 +69,7 @@ body {
     display: none;
     position: relative;
     height: 50px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin: 0px;
     width: auto;
     border-color: rgba(0, 0, 0, 0.496094);
     min-height: 140px;
@@ -381,15 +376,13 @@ body {
 #loc {
     position: absolute;
     color: rgb(255, 255, 255);
-    border-top-left-radius: 5px 5px;
-    border-top-right-radius: 5px 5px;
-    border-bottom-left-radius: 5px 5px;
-    border-bottom-right-radius: 5px 5px;
-    border-width: 1px;
-    border-style: solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
     font-family: 'Helvetica Neue';
     text-align: left;
-    border-color: rgb(0, 0, 0);
     width: 156px;
     right: 20px;
     margin-left: auto;
@@ -440,15 +433,13 @@ body {
     position: absolute;
     font-family: HelveticaNeue;
     color: rgb(255, 255, 255);
-    border-top-left-radius: 5px 5px;
-    border-top-right-radius: 5px 5px;
-    border-bottom-left-radius: 5px 5px;
-    border-bottom-right-radius: 5px 5px;
-    border-width: 1px;
-    border-style: solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
     overflow: hidden;
     text-align: center;
-    border-color: rgb(0, 0, 0);
     width: 46px;
     right: 130px;
     margin-left: auto;
@@ -464,15 +455,13 @@ body {
     position: absolute;
     font-family: HelveticaNeue;
     color: rgb(255, 255, 255);
-    border-top-left-radius: 5px 5px;
-    border-top-right-radius: 5px 5px;
-    border-bottom-left-radius: 5px 5px;
-    border-bottom-right-radius: 5px 5px;
-    border-width: 1px;
-    border-style: solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
     overflow: hidden;
     text-align: center;
-    border-color: rgb(0, 0, 0);
     width: 46px;
     right: 75px;
     margin-left: auto;
@@ -578,14 +567,12 @@ body {
     position: absolute;
     font-family: HelveticaNeue;
     color: rgb(255, 255, 255);
-    border-top-left-radius: 5px 5px;
-    border-top-right-radius: 5px 5px;
-    border-bottom-left-radius: 5px 5px;
-    border-bottom-right-radius: 5px 5px;
-    border-width: 1px;
-    border-style: solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
     overflow: hidden;
-    border-color: rgb(0, 0, 0);
     width: 46px;
     text-align: center;
     right: 20px;
@@ -617,16 +604,14 @@ body {
 }
 
 #box {
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid rgb(0, 0, 0);
     position: absolute;
     left: 0px;
-    border-top-left-radius: 5px 5px;
-    border-top-right-radius: 5px 5px;
-    border-bottom-left-radius: 5px 5px;
-    border-bottom-right-radius: 5px 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     height: 48px;
-    border-color: rgb(0, 0, 0);
     background-color: rgb(13, 13, 13);
     top: 90px;
     margin-bottom: auto;
@@ -635,7 +620,7 @@ body {
 }
 
 #feedback {
-    font-family: 'Lucida Grande', Arial, sans-serif;
+    font-family: 'Helvetica Neue';
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
